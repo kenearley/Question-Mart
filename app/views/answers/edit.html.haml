@@ -1,6 +1,6 @@
 %h1 Editing answer
 
-= render 'form'
+= render :partial => 'form', :locals => {:answer => @answer}
 
 = link_to 'Show', @answer
 \|

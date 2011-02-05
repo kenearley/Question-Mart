@@ -1,3 +1,5 @@
 class Answer < ActiveRecord::Base
-  belongs_to :questions
+  attr_accessible :answer, :question_id
+
+  belongs_to :question
 end

@@ -4,6 +4,9 @@
   %b Question:
   = @question.question
 
+  = render :partial => 'answers/answer_table', :locals => {:answers => @answers}
+  = render :partial => 'answers/form', :locals => {:answer => @answer}
+
 = link_to 'Edit', edit_question_path(@question)
 \|
 = link_to 'Back', questions_path
