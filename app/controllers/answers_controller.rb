@@ -44,7 +44,7 @@ class AnswersController < ApplicationController
 
     respond_to do |format|
       if @answer.save
-        format.html { redirect_to(@answer, :notice => 'Answer was successfully created.') }
+        format.html { redirect_to(@answer.question, :notice => 'Answer was successfully created.') }
         format.xml  { render :xml => @answer, :status => :created, :location => @answer }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class AnswersController < ApplicationController
 
     respond_to do |format|
       if @answer.update_attributes(params[:answer])
-        format.html { redirect_to(@answer, :notice => 'Answer was successfully updated.') }
+        format.html { redirect_to(@answer.question, :notice => 'Answer was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
