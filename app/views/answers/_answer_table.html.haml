@@ -1,16 +1,12 @@
 %table
   %tr
-    %th Question
     %th Answer
-    %th
-    %th
-    %th
+    %th Actions
 
   - answers.each do |answer|
     %tr
-      %td= answer.question_id
       %td= answer.answer
-      %td= link_to 'Show', answer
-      %td= link_to 'Edit', edit_answer_path(answer)
-      %td= link_to 'Destroy', answer, :confirm => 'Are you sure?', :method => :delete
+      %td
+        = link_to 'Edit', edit_answer_path(answer)
+        = link_to 'Destroy', answer, :confirm => 'Are you sure?', :method => :delete
 
