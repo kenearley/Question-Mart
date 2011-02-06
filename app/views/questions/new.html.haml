@@ -1,4 +1,7 @@
-%h1 New question
+-content_for :secondary do
+  = link_to "Back", :back
+  
+%h2 New question
 
 = render :partial => 'form', :locals => {:question => @question}
 

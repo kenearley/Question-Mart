@@ -506,16 +506,21 @@ form.bp textarea {
 /* line 24, ../../app/stylesheets/partials/_two_col.scss */
 body.two-col {
   background: #eee;
+  padding-top: 20px;
 }
-/* line 27, ../../app/stylesheets/partials/_two_col.scss */
+/* line 28, ../../app/stylesheets/partials/_two_col.scss */
 body.two-col #container {
   background: #ddd;
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
+  -moz-box-shadow: #333333 1px 1px 5px 0;
+  -webkit-box-shadow: #333333 1px 1px 5px 0;
+  -o-box-shadow: #333333 1px 1px 5px 0;
+  box-shadow: #333333 1px 1px 5px 0;
 }
-/* line 30, ../../app/stylesheets/partials/_two_col.scss */
+/* line 32, ../../app/stylesheets/partials/_two_col.scss */
 body.two-col #header, body.two-col #footer {
   background: #aaaaaa;
   display: inline;
@@ -527,7 +532,7 @@ body.two-col #header, body.two-col #footer {
 * html body.two-col #header, * html body.two-col #footer {
   overflow-x: hidden;
 }
-/* line 33, ../../app/stylesheets/partials/_two_col.scss */
+/* line 35, ../../app/stylesheets/partials/_two_col.scss */
 body.two-col #sidebar {
   background: #eee;
   display: inline;
@@ -539,7 +544,7 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 38, ../../app/stylesheets/partials/_two_col.scss */
+/* line 40, ../../app/stylesheets/partials/_two_col.scss */
 body.two-col #content {
   display: inline;
   float: left;

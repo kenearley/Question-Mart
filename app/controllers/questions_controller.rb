@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.xml
   def index
-    @questions = Question.all
+    @questions = Question.find(:all, :order => 'id DESC')
     @question = Question.new
 
     respond_to do |format|

@@ -23,10 +23,12 @@
 
 body.two-col {
   background: #eee;
+  padding-top: 20px;
 
   #container {
     background: #ddd;
-    @include container; }
+    @include container; 
+    @include box-shadow(); }
   #header, #footer {
     background: darken(#ddd, 20%);
     @include column($blueprint-grid-columns); }

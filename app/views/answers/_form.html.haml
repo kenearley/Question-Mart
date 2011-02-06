@@ -8,6 +8,6 @@
 
   - form.inputs do
     = form.input :question_id, :as => :hidden, :value => params[:id]
-    = form.input :answer
+    = form.input :answer, :label => "Answer", :input_html => {:placeholder => "What's your answer?", :rows => "5", :cols=>"100"}
 
   = form.buttons

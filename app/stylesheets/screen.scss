@@ -1,4 +1,5 @@
 // This import applies a global reset to any page that imports this stylesheet.
+@import "compass";
 @import "blueprint/reset";
 
 // To configure blueprint, edit the partials/base.sass file.

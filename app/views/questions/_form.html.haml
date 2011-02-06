@@ -7,7 +7,7 @@
           %li= msg
 
   - form.inputs do
-    = form.input :question
+    = form.input :question, :label => "Question", :input_html => {:placeholder => "Ask a question", :rows => "5", :cols=>"100"}
 
   - form.buttons do
     = form.commit_button
