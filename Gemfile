@@ -1,12 +1,9 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'haml-rails'
+gem 'haml', '3.0.25'
+gem 'haml-rails', '0.3.4'
 gem 'formtastic', '1.2.3'
 
 # Use unicorn as the web server

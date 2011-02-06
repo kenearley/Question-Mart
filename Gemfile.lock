@@ -82,6 +82,7 @@ PLATFORMS
 
 DEPENDENCIES
   formtastic (= 1.2.3)
-  haml-rails
+  haml (= 3.0.25)
+  haml-rails (= 0.3.4)
   rails (= 3.0.3)
   sqlite3-ruby
