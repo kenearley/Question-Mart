@@ -5,7 +5,7 @@
 
   - questions.each do |question|
     %tr
-      %td= question.question
+      %td= question.title
       %td
         = link_to 'Show', question
         = link_to 'Edit', edit_question_path(question)

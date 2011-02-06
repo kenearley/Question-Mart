@@ -1,0 +1,7 @@
+%ul.main-navigation
+  %li
+    = link_to_unless_current "Questions", questions_path do
+      %div Questions
+  %li
+    = link_to_unless_current "Ask a Question", new_question_path do
+      %div Ask a Question

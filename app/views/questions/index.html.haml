@@ -1,6 +1,3 @@
--content_for :secondary do
-  = link_to "Ask a question", new_question_path
-
 %h2 Latest Questions
 
 = render :partial => "question_table", :locals => {:questions => @questions}
