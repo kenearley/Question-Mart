@@ -1,19 +1,9 @@
 %h1 Listing questions
 
-%table
-  %tr
-    %th Question
-    %th
-    %th
-    %th
-
-  - @questions.each do |question|
-    %tr
-      %td= question.question
-      %td= link_to 'Show', question
-      %td= link_to 'Edit', edit_question_path(question)
-      %td= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete
+= render :partial => "question_table", :locals => {:questions => @questions}
 
 %br
+
+= render :partial => 'form', :locals => {:question => @question}
 
 = link_to 'New Question', new_question_path

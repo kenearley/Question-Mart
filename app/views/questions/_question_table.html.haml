@@ -1,0 +1,13 @@
+%table
+  %tr
+    %th Question
+    %th Actions
+
+  - questions.each do |question|
+    %tr
+      %td= question.question
+      %td
+        = link_to 'Show', question
+        = link_to 'Edit', edit_question_path(question)
+        = link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete
+

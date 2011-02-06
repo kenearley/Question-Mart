@@ -1,5 +1,5 @@
 %h1 New answer
 
-= render 'form'
+= render :partial => 'form', :locals => {:answer => @answer}
 
 = link_to 'Back', answers_path
