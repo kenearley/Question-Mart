@@ -4,6 +4,7 @@ gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml', '3.0.25'
 gem 'haml-rails', '0.3.4'
+gem 'compass', '0.10.6'
 gem 'formtastic', '1.2.3'
 
 # Use unicorn as the web server

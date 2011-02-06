@@ -30,6 +30,8 @@ GEM
     activesupport (3.0.3)
     arel (2.0.7)
     builder (2.1.2)
+    compass (0.10.6)
+      haml (>= 3.0.4)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     formtastic (1.2.3)
@@ -81,6 +83,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  compass (= 0.10.6)
   formtastic (= 1.2.3)
   haml (= 3.0.25)
   haml-rails (= 0.3.4)
