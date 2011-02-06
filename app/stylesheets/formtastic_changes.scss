@@ -1,0 +1,8 @@
+form.formtastic {
+  
+  fieldset > ol > li label, 
+  fieldset > ol > li textarea,
+  fieldset > ol > li input {
+    float: none;
+  }
+}
