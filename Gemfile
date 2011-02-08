@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
+gem 'mongrel', '1.1.5'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml', '3.0.25'
 gem 'haml-rails', '0.3.4'

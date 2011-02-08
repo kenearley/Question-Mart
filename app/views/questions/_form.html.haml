@@ -1,4 +1,4 @@
-- semantic_form_for question do |form|
+= semantic_form_for question do |form|
   -if question.errors.any?
     #error_explanation
       %h2= "#{pluralize(question.errors.count, "error")} prohibited this question from being saved:"
@@ -6,9 +6,9 @@
         - question.errors.full_messages.each do |msg|
           %li= msg
 
-  - form.inputs do
+  = form.inputs do
     = form.input :title, :label => "Title", :input_html => {:placeholder => "What is your question"}
     = form.input :question, :label => "Question", :input_html => {:placeholder => "Give more detail here", :rows => "5", :cols=>"100"}
 
-  - form.buttons do
+  = form.buttons do
     = form.commit_button
