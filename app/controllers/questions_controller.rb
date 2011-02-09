@@ -4,11 +4,6 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.find(:all, :order => 'id DESC')
     @question = Question.new
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @questions }
-    end
   end
 
   # GET /questions/1
@@ -17,22 +12,12 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answers = @question.answers
     @answer = Answer.new
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @question }
-    end
   end
 
   # GET /questions/new
   # GET /questions/new.xml
   def new
     @question = Question.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @question }
-    end
   end
 
   # GET /questions/1/edit
@@ -44,15 +29,10 @@ class QuestionsController < ApplicationController
   # POST /questions.xml
   def create
     @question = Question.new(params[:question])
-
-    respond_to do |format|
-      if @question.save
-        format.html { redirect_to(root_path, :notice => 'Question was successfully created.') }
-        format.xml  { render :xml => @question, :status => :created, :location => @question }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @question.errors, :status => :unprocessable_entity }
-      end
+    if @question.save
+      redirect_to root_path, :notice => 'Question was successfully created.'
+    else
+      render :action => "new"
     end
   end
 
@@ -60,15 +40,10 @@ class QuestionsController < ApplicationController
   # PUT /questions/1.xml
   def update
     @question = Question.find(params[:id])
-
-    respond_to do |format|
-      if @question.update_attributes(params[:question])
-        format.html { redirect_to(root_path, :notice => 'Question was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @question.errors, :status => :unprocessable_entity }
-      end
+    if @question.update_attributes(params[:question])
+      redirect_to questions_path, :notice => 'Question was successfully updated.'
+    else
+      render :action => "edit"
     end
   end
 
@@ -79,8 +54,7 @@ class QuestionsController < ApplicationController
     @question.destroy
 
     respond_to do |format|
-      format.html { redirect_to(questions_url) }
-      format.xml  { head :ok }
+      redirect_to questions_url
     end
   end
 end

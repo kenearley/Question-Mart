@@ -1,7 +1,7 @@
 Questionmart::Application.routes.draw do
-  resources :answers
-
-  resources :questions
+  resources :questions, :shallow => true do
+    resources :answers
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

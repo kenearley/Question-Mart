@@ -6,5 +6,8 @@
 %p
   = @question.question
 
-  = render :partial => 'answers/answer_table', :locals => {:answers => @answers}
-  = render :partial => 'answers/form', :locals => {:answer => @answer}
+%div
+  = link_to "Answers", question_answers_path(@question)
+
+  /*= render :partial => 'answers/answer_table', :locals => {:answers => @answers}*/
+  /*= render :partial => 'answers/form', :locals => {:answer => @answer}*/

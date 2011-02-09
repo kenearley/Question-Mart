@@ -1,3 +1,15 @@
 %h1 Listing answers
 
-= render :partial => 'answer_table', :locals => {:answers => @answers}
+%h2
+  = @question.title
+%p
+  = @question.question
+
+%table
+  %tr
+    %th Answer
+    %th Actions
+  = render :partial => @question.answers
+
+%div
+  = link_to "New Answer", new_question_answer_path(@question)
