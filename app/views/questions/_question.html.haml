@@ -1,0 +1,14 @@
+%div[question]
+  .answer-count
+    = pluralize(question.answers.count, 'answer')
+
+  .answer-title
+    = link_to question.title, question_answers_path(question), :class => 'title'
+
+  .action-links
+    = link_to 'Edit', edit_question_path(question)
+    = link_to 'Delete', question, :confirm => 'Are you sure?', :method => :delete
+
+  .time-ago
+    = time_ago_in_words(question.created_at)
+    ago

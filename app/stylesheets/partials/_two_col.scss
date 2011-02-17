@@ -23,6 +23,7 @@
 
 body.two-col {
   background: #eee;
+  font-size: 13px;
   padding-top: 20px;
 
   #container {
@@ -32,6 +33,33 @@ body.two-col {
   #header, #footer {
     background: darken(#ddd, 20%);
     @include column($blueprint-grid-columns); }
+
+    h1 {
+      @include prepend(1);
+      margin: 20px 0 0 0;
+    }
+
+    ul.main-navigation {
+      @include append(1);
+      float: right;
+      list-style: none;
+      margin: 0;
+      overflow: hidden;
+      bottom: 0;
+
+      li {
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 0;
+
+        a, div {
+          display: block;
+          padding: 5px 0 5px 20px;
+        }
+      }
+    }
+
   #sidebar {
     // One third of the grid columns, rounding down. With 24 cols, this is 8.
     background: #eee;
@@ -42,4 +70,13 @@ body.two-col {
     // With 24 cols, this is 16.
     $content-columns: ceil(2 * $blueprint-grid-columns / 3);
     // true means it's the last column in the row
-    @include column($content-columns, true); } }
+    @include column($content-columns, true); 
+    
+    #wrapper {
+      @include prepend(1);
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    
+  }
+}

@@ -9,12 +9,14 @@
     #container
       #header
         %h1 Question Mart
+        = render :partial => 'layouts/main_navigation'
       
       #content
-        = yield
+        #wrapper
+          = yield
       
       #sidebar
-        = render :partial => 'layouts/main_navigation'
+        (sidebar stuff here)
 
       #footer
         &nbsp;

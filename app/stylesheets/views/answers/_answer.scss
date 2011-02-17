@@ -1,0 +1,14 @@
+.answer {
+  border-bottom: 1px dotted #000;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+
+  .time-ago {
+    float: right;
+    font-size: 10px;
+    position: relative;
+    top: 10px;
+  }
+}
+

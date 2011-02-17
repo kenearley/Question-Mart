@@ -1,5 +1,5 @@
-%tr
-  %td= answer.answer
-  %td
-    = link_to 'Edit', edit_answer_path(answer)
-    = link_to 'Destroy', answer, :confirm => 'Are you sure?', :method => :delete
+%div[answer]
+  = answer.answer
+  .time-ago
+    = time_ago_in_words(answer.created_at)
+    ago

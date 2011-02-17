@@ -1,0 +1,36 @@
+.question {
+  border-bottom: 1px dotted #000;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+
+  .answer-count {
+    background: #eee;
+    display: block;
+    float: left;
+    font-size: 16px;
+    text-align: center;
+    margin-right: 20px;
+    padding: 5px;
+    width: 60px;
+  }
+
+  .answer-title {
+    a.title {
+      text-decoration: none;
+      font-size: 16px;
+    }
+  }
+
+  .action-links {
+    font-size: 10px;
+  }
+
+  .time-ago {
+    float: right;
+    font-size: 10px;
+    position: relative;
+    top: 5px;
+  }
+
+}

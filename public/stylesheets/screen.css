@@ -507,9 +507,10 @@ form.bp textarea {
 /* line 24, ../../app/stylesheets/partials/_two_col.scss */
 body.two-col {
   background: #eee;
+  font-size: 13px;
   padding-top: 20px;
 }
-/* line 28, ../../app/stylesheets/partials/_two_col.scss */
+/* line 29, ../../app/stylesheets/partials/_two_col.scss */
 body.two-col #container {
   background: #ddd;
   width: 950px;
@@ -521,7 +522,7 @@ body.two-col #container {
   -o-box-shadow: #333333 1px 1px 5px 0;
   box-shadow: #333333 1px 1px 5px 0;
 }
-/* line 32, ../../app/stylesheets/partials/_two_col.scss */
+/* line 33, ../../app/stylesheets/partials/_two_col.scss */
 body.two-col #header, body.two-col #footer {
   background: #aaaaaa;
   display: inline;
@@ -533,7 +534,33 @@ body.two-col #header, body.two-col #footer {
 * html body.two-col #header, * html body.two-col #footer {
   overflow-x: hidden;
 }
-/* line 35, ../../app/stylesheets/partials/_two_col.scss */
+/* line 37, ../../app/stylesheets/partials/_two_col.scss */
+body.two-col h1 {
+  padding-left: 40px;
+  margin: 20px 0 0 0;
+}
+/* line 42, ../../app/stylesheets/partials/_two_col.scss */
+body.two-col ul.main-navigation {
+  padding-right: 40px;
+  float: right;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  bottom: 0;
+}
+/* line 50, ../../app/stylesheets/partials/_two_col.scss */
+body.two-col ul.main-navigation li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+/* line 56, ../../app/stylesheets/partials/_two_col.scss */
+body.two-col ul.main-navigation li a, body.two-col ul.main-navigation li div {
+  display: block;
+  padding: 5px 0 5px 20px;
+}
+/* line 63, ../../app/stylesheets/partials/_two_col.scss */
 body.two-col #sidebar {
   background: #eee;
   display: inline;
@@ -545,7 +572,7 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 40, ../../app/stylesheets/partials/_two_col.scss */
+/* line 68, ../../app/stylesheets/partials/_two_col.scss */
 body.two-col #content {
   display: inline;
   float: left;
@@ -555,4 +582,70 @@ body.two-col #content {
 /* line 138, ../../../../../.rvm/gems/ruby-1.8.7-p330@questionmart/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.two-col #content {
   overflow-x: hidden;
+}
+/* line 75, ../../app/stylesheets/partials/_two_col.scss */
+body.two-col #content #wrapper {
+  padding-left: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 1, ../../app/stylesheets/views/questions/_question.scss */
+.question {
+  border-bottom: 1px dotted #000;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+/* line 7, ../../app/stylesheets/views/questions/_question.scss */
+.question .answer-count {
+  background: #eee;
+  display: block;
+  float: left;
+  font-size: 16px;
+  text-align: center;
+  margin-right: 20px;
+  padding: 5px;
+  width: 60px;
+}
+/* line 19, ../../app/stylesheets/views/questions/_question.scss */
+.question .answer-title a.title {
+  text-decoration: none;
+  font-size: 16px;
+}
+/* line 25, ../../app/stylesheets/views/questions/_question.scss */
+.question .action-links {
+  font-size: 10px;
+}
+/* line 29, ../../app/stylesheets/views/questions/_question.scss */
+.question .time-ago {
+  float: right;
+  font-size: 10px;
+  position: relative;
+  top: 5px;
+}
+
+/* line 1, ../../app/stylesheets/views/questions/_index.scss */
+h2, h3 {
+  border-bottom: 1px solid #000;
+}
+
+/* line 1, ../../app/stylesheets/views/answers/_answer.scss */
+.answer {
+  border-bottom: 1px dotted #000;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+/* line 7, ../../app/stylesheets/views/answers/_answer.scss */
+.answer .time-ago {
+  float: right;
+  font-size: 10px;
+  position: relative;
+  top: 10px;
+}
+
+/* line 1, ../../app/stylesheets/views/answers/_index.scss */
+.answer-form {
+  margin-top: 20px;
 }

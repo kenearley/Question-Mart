@@ -1,15 +1,12 @@
-%h1 Listing answers
-
 %h2
   = @question.title
 %p
   = @question.question
 
-%table
-  %tr
-    %th Answer
-    %th Actions
-  = render :partial => @question.answers
+%h3= pluralize(@question.answers.count, 'Answer')
 
-%div
-  = link_to "New Answer", new_question_answer_path(@question)
+= render @answers
+
+%div.answer-form
+  %h3 Your answer
+  = render :partial => 'form'
