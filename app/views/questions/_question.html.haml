@@ -7,7 +7,7 @@
 
   .action-links
     = link_to 'Edit', edit_question_path(question)
-    = link_to 'Delete', question, :confirm => 'Are you sure?', :method => :delete
+    = button_to 'Delete', question_path(question), :method => :delete
 
   .time-ago
     = time_ago_in_words(question.created_at)

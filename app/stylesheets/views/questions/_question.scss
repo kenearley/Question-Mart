@@ -23,7 +23,16 @@
   }
 
   .action-links {
-    font-size: 10px;
+    form, form > div {
+      display: inline;
+    }
+
+    a, input[type=submit] {
+      background: none;
+      border:none;
+      font-size: 10px;
+      text-decoration: underline;
+    }
   }
 
   .time-ago {
