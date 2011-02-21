@@ -1,3 +1,11 @@
+- content_for :after_scripts do
+  = javascript_include_tag 'questions/questionsIndex'
+  = javascript_include_tag 'questions/question'
+  :javascript
+    $(document).ready(function(){
+      $(document).questionsIndex();  
+    });
+
 %div.questions
   %h2 Latest Questions
   = render @questions

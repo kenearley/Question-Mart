@@ -4,4 +4,3 @@ log/*.log
 tmp/**/*
 .rvmrc
 *.swp
-public/stylesheets/*

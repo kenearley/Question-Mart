@@ -613,11 +613,18 @@ body.two-col #content #wrapper {
   text-decoration: none;
   font-size: 16px;
 }
-/* line 25, ../../app/stylesheets/views/questions/_question.scss */
-.question .action-links {
-  font-size: 10px;
+/* line 26, ../../app/stylesheets/views/questions/_question.scss */
+.question .action-links form, .question .action-links form > div {
+  display: inline;
 }
-/* line 29, ../../app/stylesheets/views/questions/_question.scss */
+/* line 30, ../../app/stylesheets/views/questions/_question.scss */
+.question .action-links a, .question .action-links input[type=submit] {
+  background: none;
+  border: none;
+  font-size: 10px;
+  text-decoration: underline;
+}
+/* line 38, ../../app/stylesheets/views/questions/_question.scss */
 .question .time-ago {
   float: right;
   font-size: 10px;

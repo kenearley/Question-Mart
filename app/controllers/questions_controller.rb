@@ -52,6 +52,10 @@ class QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
-    redirect_to root_path
+    if request.xhr?
+      render :json => {:notice => "Answer successfully deleted."}
+    else
+      redirect_to root_path
+    end
   end
 end
