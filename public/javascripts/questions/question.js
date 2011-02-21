@@ -24,15 +24,12 @@
     }
 
     function deleteQuestion() {
-      $mainContainer.trigger('questionDeleted');
-      $mainContainer.slideUp('slow', function() { $mainContainer.remove(); });
-      
       $.ajax({
         url: $deleteButton.attr("action"),
         type: $deleteButton.attr("method"),
         data: $deleteButton.serialize(),
         success: function(response) {
-          console.log(response.notice);
+          $mainContainer.slideUp('slow', function() { $mainContainer.remove(); });
         }
       });
     }
