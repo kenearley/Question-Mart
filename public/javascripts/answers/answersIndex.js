@@ -6,6 +6,7 @@
     
     var $mainContainer,
         $answers,
+        $answerCount,
         $newAnswerForm;
         
     /* PRIVATE METHODS */
@@ -14,6 +15,7 @@
     function init() {
       $mainContainer = $element;
       $answers = $('div.answer', $mainContainer).answer();
+      $answerCount = $('h3 span.count');
       $newAnswerForm = $('form.answer');
       bindEvents();
     }
@@ -22,7 +24,6 @@
       $newAnswerForm.submit(function(e) {
         e.preventDefault();
         addAnswer();
-
       });
     }
 
@@ -32,9 +33,12 @@
         type: $newAnswerForm.attr("method"),
         data: $newAnswerForm.serialize(),
         success: function(response) {
+          $newAnswerForm.find('textarea').val("");
           var $newAnswer = $(response).hide();
           $('#answersWrapper', $mainContainer).append($newAnswer);
           $newAnswer.slideDown().answer();
+          $answers.push($newAnswer);
+          $answerCount.html($answers.length);
         }
       });
     }

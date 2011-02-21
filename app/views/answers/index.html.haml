@@ -11,7 +11,10 @@
 %p
   = @question.question
 
-%h3= pluralize(@question.answers.count, 'Answer')
+%h3
+  %span.count= @question.answers.count
+  =@question.answers.count == 1 ? 'Answer' : 'Answers'
+    
 
 #answersWrapper
   = render @answers

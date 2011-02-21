@@ -11,15 +11,8 @@
     // constructor
     function init() {
       $mainContainer = $element;
-      bindEvents();
     }
 
-    function bindEvents() {
-      $mainContainer.click(function() {
-        console.log(this);
-      });
-    }
-    
     // run constructor
     init();
     
