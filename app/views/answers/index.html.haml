@@ -1,8 +1,9 @@
-- content_for do
-  = javascript_include_tag 'questions/questionsIndex'
+- content_for :after_scripts do
+  = javascript_include_tag 'answers/answersIndex'
+  = javascript_include_tag 'answers/answer'
   :javascript
     $(document).ready(function(){
-      $(document).questionsIndex();  
+      $(document).answersIndex();  
     });
 
 %h2
@@ -12,7 +13,8 @@
 
 %h3= pluralize(@question.answers.count, 'Answer')
 
-= render @answers
+#answersWrapper
+  = render @answers
 
 %div.answer-form
   %h3 Your answer

@@ -31,7 +31,11 @@ class AnswersController < ApplicationController
     @question = Question.find(params[:question_id])
     @answer = @question.answers.build(params[:answer])
     if @answer.save
-      redirect_to question_answers_path(@question), :notice => 'Answer was successfully created.'
+      if request.xhr?
+        render :partial => "answer", :locals => { :answer => @answer }
+      else
+        redirect_to question_answers_path(@question), :notice => 'Answer was successfully created.'
+      end
     else
       render :action => 'new' 
     end
