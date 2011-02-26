@@ -19,10 +19,7 @@
     /* PUBLIC METHODS */
     
     return {
-      delete: function() {
-        $mainContainer.trigger('answerDeleted');
-        $mainContainer.remove();
-      }
+      // public methods go here
     };
     
   }

@@ -12,27 +12,37 @@
     // constructor
     function init() {
       $mainContainer = $element;
-      $deleteButton = $('input[type=submit]', $mainContainer);
+      $deleteButton = $('form.button_to', $mainContainer);
       bindEvents();
-      console.log('question created');
     }
     
     function bindEvents() {
       $deleteButton.submit(function(e) {
         e.preventDefault();
-        alert('deleted');
+        deleteQuestion();
       });
     }
-    
+
+    function deleteQuestion() {
+      $.ajax({
+        url: $deleteButton.attr("action"),
+        type: $deleteButton.attr("method"),
+        data: $deleteButton.serialize(),
+        success: function(response) {
+          $mainContainer.slideUp('slow', function() { $mainContainer.remove(); });
+          $mainContainer.trigger('questionDeleted');
+        }
+      });
+    }
+
     // run constructor
     init();
     
     /* PUBLIC METHODS */
     
     return {
-      delete: function() {
-        $mainContainer.trigger('questionDeleted');
-        $mainContainer.remove();
+      deleteQuestion: function() {
+        deleteQuestion();
       }
     };
     

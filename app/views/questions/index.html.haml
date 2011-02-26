@@ -1,6 +1,6 @@
 - content_for :after_scripts do
-  = javascript_include_tag 'questions/questionsIndex'
-  = javascript_include_tag 'questions/question'
+  = javascript_include_tag 'questions/index'
+  = javascript_include_tag 'questions/_question'
   :javascript
     $(document).ready(function(){
       $(document).questionsIndex();  

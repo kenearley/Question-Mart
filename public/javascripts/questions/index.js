@@ -13,6 +13,18 @@
     function init() {
       $mainContainer = $element;
       $questions = $('.question', $mainContainer).question();
+      bindEvents();
+    }
+
+    function bindEvents() {
+      $mainContainer.bind('questionDeleted', function(event) {
+        $questions.each(function(index) {
+          if(this == event.target) {
+            $questions.splice(index, 1);
+            return;
+          }
+        });
+      });
     }
     
     // run constructor
@@ -21,6 +33,9 @@
     /* PUBLIC METHODS */
     
     return {
+      getQuestions: function() {
+        return $questions;
+      }
     };
     
   }
