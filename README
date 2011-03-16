@@ -3,3 +3,5 @@
 This is a a small Q&A rails app to solidify my knowledge of Ruby on Rails. I will also use this to demonstrate the ability to create a completely unobtrusive JavaScript layer for 'progressive enhancement'
 
 Here's a presentation I made that explains the JavaScript structure that I use: http://dl.dropbox.com/u/2373370/Organizing_JavaScript_In_Large_Projects.pdf 
+
+(update on test_feature branch)
