@@ -1,71 +1,43 @@
 (function($) {  
   
-  function answersIndex($element) {
-    
-    /* PRIVATE VARIABLES */
-    
-    var $mainContainer,
-        $answers,
-        $answerCount,
-        $newAnswerForm;
-        
-    /* PRIVATE METHODS */
+  QM.AnswersIndex = Spine.Controller.create({
+
+    elements: {
+      "div.answer": "answers",
+      "h3 span.count": "answerCount",
+      "form#new_answer": "newAnswerForm"
+    },
+    events: {"submit form#new_answer": "addAnswer"},
+    proxied: ["addAnswer"],
     
     // constructor
-    function init() {
-      $mainContainer = $element;
-      $answers = $('div.answer', $mainContainer).answer();
-      $answerCount = $('h3 span.count');
-      $newAnswerForm = $('form.answer');
-      bindEvents();
-    }
+    init: function() {
+      this.answers.initPlugin({pluginName: "answer", controller: QM.Answer});
+    },
 
-    function bindEvents() {
-      $newAnswerForm.submit(function(e) {
-        e.preventDefault();
-        addAnswer();
-      });
-    }
+    addAnswer: function(event) {
+      var el = this.el,
+          form = this.newAnswerForm,
+          answers = this.answers,
+          answerCount = this.answerCount;
 
-    function addAnswer() {
+      event.preventDefault();
       $.ajax({
-        url: $newAnswerForm.attr("action"),
-        type: $newAnswerForm.attr("method"),
-        data: $newAnswerForm.serialize(),
+        url: form.attr("action"),
+        type: form.attr("method"),
+        data: form.serialize(),
         success: function(response) {
-          $newAnswerForm.find('textarea').val("");
-          var $newAnswer = $(response).hide();
-          $('#answersWrapper', $mainContainer).append($newAnswer);
-          $newAnswer.slideDown().answer();
-          $answers.push($newAnswer);
-          $answerCount.html($answers.length);
+          form.find('textarea').val("");
+          var newAnswer = $(response).hide();
+          $('#answersWrapper', el).append(newAnswer);
+          newAnswer.initPlugin({pluginName :"answer", controller: QM.Answer});
+          newAnswer.slideDown();
+          answers.push(newAnswer[0]);
+          answerCount.html(answers.length);
         }
       });
     }
-      
-    
-    // run constructor
-    init();
-    
-    /* PUBLIC METHODS */
-    
-    return {
-      // public method go here
-    };
-    
-  }
-  
-  // jQuery plugin method
-  $.fn.answersIndex = function() {
-    return this.each(function() {
-      var $this = $(this);
-      
-      // If not already stored, store plugin object in this element's data
-      if (!$this.data('answersIndex')) {
-        $this.data('answersIndex', answersIndex($this));
-      }
-    });
-  };
-    
-})(jQuery);
 
+  });
+  
+})(jQuery);

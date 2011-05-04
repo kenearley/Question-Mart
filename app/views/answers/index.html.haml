@@ -3,7 +3,7 @@
   = javascript_include_tag 'answers/_answer'
   :javascript
     $(document).ready(function(){
-      $(document).answersIndex();  
+      $(document).initPlugin({pluginName: "answersIndex", controller: QM.AnswersIndex});  
     });
 
 %h2

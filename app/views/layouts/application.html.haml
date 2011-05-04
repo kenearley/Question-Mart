@@ -4,6 +4,8 @@
     %title Questionmart
     = stylesheet_link_tag 'screen.css', 'formtastic', 'formtastic_changes'
     = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js'
+    = javascript_include_tag 'shared/spine.js'
+    = javascript_include_tag 'shared/application.js'
     = yield :after_scripts
 
     = csrf_meta_tag

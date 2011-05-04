@@ -1,41 +1,9 @@
 (function($) {  
   
-  function answer($element) {
+  QM.Answer = Spine.Controller.create({
     
-    /* PRIVATE VARIABLES */
-    
-    var $mainContainer;
-        
-    /* PRIVATE METHODS */
-    
-    // constructor
-    function init() {
-      $mainContainer = $element;
-    }
-
-    // run constructor
-    init();
-    
-    /* PUBLIC METHODS */
-    
-    return {
-      // public methods go here
-    };
-    
-  }
+  });
   
-  // jQuery plugin method
-  $.fn.answer = function() {
-    return this.each(function() {
-      var $this = $(this);
-      
-      // If not already stored, store plugin object in this element's data
-      if (!$this.data('answer')) {
-        $this.data('answer', answer($this));
-      }
-    });
-  };
-    
 })(jQuery);
 
 

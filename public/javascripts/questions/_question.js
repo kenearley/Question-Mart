@@ -1,66 +1,25 @@
 (function($) {  
   
-  function question($element) {
-    
-    /* PRIVATE VARIABLES */
-    
-    var $mainContainer,
-        $deleteButton;
-        
-    /* PRIVATE METHODS */
-    
-    // constructor
-    function init() {
-      $mainContainer = $element;
-      $deleteButton = $('form.button_to', $mainContainer);
-      bindEvents();
-    }
-    
-    function bindEvents() {
-      $deleteButton.submit(function(e) {
-        e.preventDefault();
-        deleteQuestion();
-      });
-    }
+  QM.Question = Spine.Controller.create({
 
-    function deleteQuestion() {
+    elements: {"form.button_to": "deleteButton"},
+    events: {"submit form.button_to": "deleteQuestion"},
+    proxied: ["deleteQuestion"],
+    
+    deleteQuestion: function(event) {
+      event.preventDefault();
+      var question = this;
       $.ajax({
-        url: $deleteButton.attr("action"),
-        type: $deleteButton.attr("method"),
-        data: $deleteButton.serialize(),
+        url: this.deleteButton.attr("action"),
+        type: this.deleteButton.attr("method"),
+        data: this.deleteButton.serialize(),
         success: function(response) {
-          $mainContainer.slideUp('slow', function() { $mainContainer.remove(); });
-          $mainContainer.trigger('questionDeleted');
+          question.el.slideUp('slow', function() { question.el.remove(); });
+          question.el.trigger('questionDeleted');
         }
       });
     }
 
-    // run constructor
-    init();
-    
-    /* PUBLIC METHODS */
-    
-    return {
-      deleteQuestion: function() {
-        deleteQuestion();
-      }
-    };
-    
-  }
-  
-  // jQuery plugin method
-  $.fn.question = function() {
-    return this.each(function() {
-      var $this = $(this);
-      
-      // If not already stored, store plugin object in this element's data
-      if (!$this.data('question')) {
-        $this.data('question', question($this));
-      }
-    });
-  };
-    
+  });
+
 })(jQuery);
-
-
-
