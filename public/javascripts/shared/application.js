@@ -21,7 +21,7 @@ QM = {};
         var $this = $(this);
         
         // If not already stored, store plugin object in this element's data
-        if (!$this.data(name)) {
+        if (!$this.data(dataName)) {
           $this.data(dataName, controller.init({el: $this}));
         }
       });
