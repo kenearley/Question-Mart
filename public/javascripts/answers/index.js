@@ -29,7 +29,7 @@
           form.find('textarea').val("");
           var newAnswer = $(response).hide();
           $('#answersWrapper', el).append(newAnswer);
-          newAnswer.initPlugin({pluginName :"answer", controller: QM.Answer});
+          QM.Answer.bindToDom("answer", newAnswer);
           newAnswer.slideDown();
           answers.push(newAnswer[0]);
           answerCount.html(answers.length);
