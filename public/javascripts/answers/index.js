@@ -10,9 +10,8 @@
     events: {"submit form#new_answer": "addAnswer"},
     proxied: ["addAnswer"],
     
-    // constructor
     init: function() {
-      this.answers.initPlugin({pluginName: "answer", controller: QM.Answer});
+      QM.Answer.bindToDom("answer", this.answers);
     },
 
     addAnswer: function(event) {

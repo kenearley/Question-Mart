@@ -3,7 +3,7 @@
   = javascript_include_tag 'questions/_question'
   :javascript
     $(document).ready(function(){
-      $(document).initPlugin({pluginName: "questionsIndex", controller: QM.QuestionsIndex});  
+      QM.QuestionsIndex.bindToDom("questionsIndex", $(document));  
     });
 
 %div.questions
