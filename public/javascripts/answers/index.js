@@ -11,7 +11,7 @@
     proxied: ["addAnswer"],
     
     init: function() {
-      QM.Answer.bindToDom("answer", this.answers);
+      QM.Answer.initAll("answer", this.answers);
     },
 
     addAnswer: function(event) {
@@ -29,7 +29,7 @@
           form.find('textarea').val("");
           var newAnswer = $(response).hide();
           $('#answersWrapper', el).append(newAnswer);
-          QM.Answer.bindToDom("answer", newAnswer);
+          QM.Answer.initAll("answer", newAnswer);
           newAnswer.slideDown();
           answers.push(newAnswer[0]);
           answerCount.html(answers.length);

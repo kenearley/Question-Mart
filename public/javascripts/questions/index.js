@@ -7,7 +7,7 @@
     proxied: ["removeQuestion", "getQuestions"],
     
     init: function() {
-      QM.Question.bindToDom("question", this.questions);
+      QM.Question.initAll("question", this.questions);
     },
 
     removeQuestion: function(event) {

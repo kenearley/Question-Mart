@@ -4,7 +4,7 @@ QM = {};
 (function($) {  
   // adding the ability to attach the controller object to the DOM node
   Spine.Controller.extend({
-    bindToDom: function(dataName, collection) {  
+    initAll: function(dataName, collection) {  
       var controller = this;
       return collection.each(function() {
         var $this = $(this);
