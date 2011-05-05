@@ -4,7 +4,7 @@
     
     elements: {".question": "questions"},
     events: {"questionDeleted": "removeQuestion"},
-    proxied: ["removeQuestion", "getQuestions"],
+    proxied: ["getQuestions"],
     
     init: function() {
       QM.Question.initAll("question", this.questions);
